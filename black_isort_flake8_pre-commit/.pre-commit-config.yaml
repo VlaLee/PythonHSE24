@@ -11,7 +11,6 @@ repos:
       - id: black
         name: black --config black_isort_flake8_pre-commit/.black
         entry: black
-        exclude: ".pre-commit-config.yaml"
         language: system
         types: [python]
         pass_filenames: false
