@@ -5,7 +5,9 @@ url: https://leetcode.com/problems/word-ladder/description/?envType=problem-list
 
 
 class Solution:
-    def ladderLength(self, beginWord: str, endWord: str, wordList: list[str]) -> int:
+    def ladderLength(
+        self, beginWord: str, endWord: str, wordList: list[str]
+    ) -> int:
         """
         основная идея - рассмотреть переход от одного слова к другому слову
         как ребро графа между этими словами
@@ -34,7 +36,7 @@ class Solution:
             v = queue.pop(0)
             for i in range(len(v)):
                 for symb in letters:
-                    u = v[:i] + symb + v[i+1:]
+                    u = v[:i] + symb + v[i + 1 :]
                     if u in wordList and distance[u] == 0:
                         distance[u] = distance[v] + 1
                         queue.append(u)

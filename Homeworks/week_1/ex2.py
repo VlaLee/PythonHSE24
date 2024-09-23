@@ -38,20 +38,20 @@ class Solution:
 
         for i in range(len(combs)):
             if len(combs[i]) == 1:
-                result.append(combs[i][0] + ' ' * sizes[i])
+                result.append(combs[i][0] + " " * sizes[i])
                 continue
 
             if i == len(combs) - 1:
-                result.append(' '.join(combs[i]))
-                result[-1] += ' ' * (sizes[i] - len(combs[i]) + 1)
+                result.append(" ".join(combs[i]))
+                result[-1] += " " * (sizes[i] - len(combs[i]) + 1)
                 continue
 
             space_size = sizes[i] // (len(combs[i]) - 1)
             extra_spaces = sizes[i] % (len(combs[i]) - 1)
 
             for j in range(extra_spaces):
-                combs[i][j] += ' '
+                combs[i][j] += " "
 
-            result.append((' ' * space_size).join(combs[i]))
+            result.append((" " * space_size).join(combs[i]))
 
         return result

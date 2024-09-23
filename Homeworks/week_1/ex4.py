@@ -15,7 +15,7 @@ class Solution:
         """
 
         if k > 1:
-            return ''.join(sorted(s))
+            return "".join(sorted(s))
 
         ans = s
         for i in range(len(s)):

@@ -3,6 +3,7 @@ leetcode.com/problem-list/string/
 url: https://leetcode.com/problems/longest-duplicate-substring/description/?envType=problem-list-v2&envId=string
 """
 
+
 class Solution:
     """
     заметим, что если есть повторяющаяся строка размера k,
@@ -11,6 +12,7 @@ class Solution:
     а в качестве проверки, что в строке есть повторяющаяся подстрока
     будем сравнивать их по хэшам (алгоритмом Рабина-Карпа)
     """
+
     def RabinKarpMatching(self, s: str, length: int) -> str:
         hashMap = {}
         n = len(s)
@@ -27,10 +29,10 @@ class Solution:
 
         for i in range(len(s) - length + 1):
             if text in hashMap:
-                if s[i:i + length] == hashMap[text][1]:
+                if s[i : i + length] == hashMap[text][1]:
                     hashMap[text][0] += 1
             else:
-                hashMap[text] = [1, s[i:i + length]]
+                hashMap[text] = [1, s[i : i + length]]
 
             if i < n - length:
                 text = (d * (text - ord(s[i]) * h) + ord(s[i + length])) % q

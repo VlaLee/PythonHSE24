@@ -15,9 +15,9 @@ class Solution:
         stack = []
 
         for i in range(len(s)):
-            if s[i] == '(':
+            if s[i] == "(":
                 stack.append(i)
-            elif len(stack) > 0 and s[stack[-1]] == '(':
+            elif len(stack) > 0 and s[stack[-1]] == "(":
                 stack.pop()
             else:
                 stack.append(i)
