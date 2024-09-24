@@ -20,10 +20,11 @@ class Functional:
 
     @private
     def targetFunction(self) -> float:
+        local_regular_ratio: float = 0.033
         regular_ratio: float = 0.000993
         result: float = 0.0
         for arg in self.__arguments:
-            result += arg
+            result += arg - (arg**2) * local_regular_ratio
 
         return result * regular_ratio
 
