@@ -19,7 +19,17 @@ $$\displaystyle linearFunction(X, W)=(\sum_{i=1}^nw_ix_i)*RR$$
 где $$X=[x_1,x_2,...,x_n], W=[w_1,w_2,...,w_n], RR$$ (Regular Ratio) $$=0.00044701$$.
 
 ### loss function
-Поставим следующую задачу: мы хотим максимально приблизить значение функции $$targetFunction(X)$$ к значению функции $$linearFunction(X,W)$$. Для этого необходимо найти такой вектор $$W$$, что $$|targetFunction(X)-linearFunction(X,W)|\to min$$. По фиксированному вектору аргументов $$X$$ будем тестировать вектор весов $$W$$ по функции потерь $$lossFunction(X,W)=(targetFunction(X)-linearFunction(X,W))^2$$. Теперь наша задача состоит в том, чтобы свести значение функции потер к минимуму $$lossFunction(X,W)\to min$$.
+Поставим следующую задачу: мы хотим максимально приблизить значение функции $$targetFunction(X)$$ к значению функции $$linearFunction(X,W)$$. Для этого необходимо найти такой вектор $$W$$, что
+
+$$|targetFunction(X)-linearFunction(X,W)|\to min$$.
+
+По фиксированному вектору аргументов $$X$$ будем тестировать вектор весов $$W$$ по функции потерь
+
+$$lossFunction(X,W)=(targetFunction(X)-linearFunction(X,W))^2$$.
+
+Теперь наша задача состоит в том, чтобы свести значение функции потер к минимуму
+
+$$lossFunction(X,W)\to min$$.
 
 ## Database reading and recording results
 
