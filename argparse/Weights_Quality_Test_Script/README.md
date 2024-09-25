@@ -21,15 +21,15 @@ $$\displaystyle linearFunction(X, W)=(\sum_{i=1}^nw_ix_i)*RR$$
 ### loss function
 Поставим следующую задачу: мы хотим максимально приблизить значение функции $$targetFunction(X)$$ к значению функции $$linearFunction(X,W)$$. Для этого необходимо найти такой вектор $$W$$, что
 
-$$\displaystyle |targetFunction(X)-linearFunction(X,W)|\to min$$.
+$$\displaystyle |targetFunction(X)-linearFunction(X,W)|\to min$$
 
 По фиксированному вектору аргументов $$X$$ будем тестировать вектор весов $$W$$ по функции потерь
 
-$$\displaystyle lossFunction(X,W)=(targetFunction(X)-linearFunction(X,W))^2$$.
+$$\displaystyle lossFunction(X,W)=(targetFunction(X)-linearFunction(X,W))^2$$
 
 Теперь наша задача состоит в том, чтобы свести значение функции потер к минимуму
 
-$$\displaystyle lossFunction(X,W)\to min$$.
+$$\displaystyle lossFunction(X,W)\to min$$
 
 ## Database reading and recording results
 
