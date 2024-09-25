@@ -1,22 +1,28 @@
 # Weights Quality Test Script
 ---
 ## Introduction
----
+
 ### target function
 
 Дана целевая функция $$targetFunction$$, использующая вектор аргументов (типа float) размера $$n$$, заданная следующей формулой:
-$$\displaystyle targetFunction(X)=(\sum_{i=1}^n (x_i^2-x_i)*LRR)*RR$$, где $$\displaystyle X=[x_1,x_2,...,x_n], LRR$$ (Local Regular Ratio) $$=0.033, RR$$ (Regular Ratio) $$=0.000993$$.
+
+$$\displaystyle targetFunction(X)=(\sum_{i=1}^n (x_i^2-x_i)*LRR)*RR$$
+
+где $$X=[x_1,x_2,...,x_n], LRR$$ (Local Regular Ratio) $$=0.033, RR$$ (Regular Ratio) $$=0.000993$$.
 
 
 ### linear function
-Дана линейная функция $$linearFunction$$, использующая, помимо вектора аргументов, вектор весов того же размера $$n$$, заданная следующей формулой: $$\displaystyle linearFunction(X, W)=(\sum_{i=1}^nw_ix_i)*RR$$, где $$\displaystyle X=[x_1,x_2,...,x_n], W=[w_1,w_2,...,w_n], RR$$ (Regular Ratio) $$=0.00044701$$.
+Дана линейная функция $$linearFunction$$, использующая, помимо вектора аргументов, вектор весов того же размера $$n$$, заданная следующей формулой:
 
+$$\displaystyle linearFunction(X, W)=(\sum_{i=1}^nw_ix_i)*RR$$
+
+где $$X=[x_1,x_2,...,x_n], W=[w_1,w_2,...,w_n], RR$$ (Regular Ratio) $$=0.00044701$$.
 
 ### loss function
-Поставим следующую задачу: мы хотим максимально приблизить значение функции $$targetFunction(X)$$ к значению функции $$linearFunction(X,W)$$. Для этого необходимо найти такой вектор $$W$$, что $$|targetFunction(X)-linearFunction(X,W)|\to min$$. По фиксированному вектору аргументов $$X$$ будем тестировать вектор весов $$W$$ по функции потерь $$\displaystyle lossFunction(X,W)=(targetFunction(X)-linearFunction(X,W))^2$$. Теперь наша задача состоит в том, чтобы свести значение функции потер к минимуму $$\displaystyle lossFunction(X,W)\to min$$.
+Поставим следующую задачу: мы хотим максимально приблизить значение функции $$targetFunction(X)$$ к значению функции $$linearFunction(X,W)$$. Для этого необходимо найти такой вектор $$W$$, что $$|targetFunction(X)-linearFunction(X,W)|\to min$$. По фиксированному вектору аргументов $$X$$ будем тестировать вектор весов $$W$$ по функции потерь $$lossFunction(X,W)=(targetFunction(X)-linearFunction(X,W))^2$$. Теперь наша задача состоит в том, чтобы свести значение функции потер к минимуму $$lossFunction(X,W)\to min$$.
 
 ## Database reading and recording results
----
+
 ### Flag --read (-r)
 Пусть существует файл weights.txt со 100 различными векторами весов, которые будет тестировать скрипт. Мы хотим при запуске скрипта иметь флаг **--read (-r)**, а в качестве аргумента указывать файл weights.txt для чтения.
 
@@ -35,7 +41,7 @@ $$\displaystyle targetFunction(X)=(\sum_{i=1}^n (x_i^2-x_i)*LRR)*RR$$, где $$
 Если мы хотим, чтобы после расчетов функции потерь, все результаты шли в отсортированном порядке (векторы весов будут идти от лучших к худшим: в порядке возрастания значения функции потерь), то создадим флаг **--sorted (-s)**, в качестве аргумента которого необходимо указать значение **true**, если мы хотим отсортировать результаты, или **false** в противоположном случае. Этот флаг можно не указывать, тогда он примет значение по умолчанию, равный **false**.
 
 ## Running script and getting results
----
+
 Запустим скрипт следующей командой:
 ```
 python weightsQualityTestScript.py --read weights.txt --write result.txt --sorted true
