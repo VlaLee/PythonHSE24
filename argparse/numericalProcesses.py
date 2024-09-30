@@ -37,6 +37,6 @@ if args.action == "sum":
 elif args.action == "max":
     print(max(args.set))
 elif args.action == "min":
-    print(max(args.set))
+    print(min(args.set))
 elif args.action == "diff":
     print(max(args.set) - min(args.set))
